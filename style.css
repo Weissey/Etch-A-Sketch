@@ -1,0 +1,32 @@
+body {
+    background-color: beige;
+}
+
+/*Main grid*/
+.flex-grid {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    height: 600px;
+    width: 600px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.col, .row {
+    display: flex;
+    flex-basis: 0;
+    border-color: black;
+    width: auto;
+    height: auto;
+    flex: 1 0 auto;
+    border: 0.1px solid black;
+}
+
+.hover {
+    background-color: black;
+}
+
+.col {
+    flex-direction: column;
+}
