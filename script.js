@@ -41,6 +41,7 @@ function changeSize() {
         return;
     } else if (isNaN(answer)) {
         alert("The result you entered was not a number.");
+        resize(16);
         return;
     }
 }
