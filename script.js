@@ -1,7 +1,10 @@
+let colFragment = new DocumentFragment();
+
 resize(16);
 
 function resize(e) {
-    let colFragment = new DocumentFragment();
+    let toBeDeleted = document.querySelectorAll(".col");
+    toBeDeleted.forEach(div => div.remove());
     for (let i = 0; i < e; i++) {
         let div = document.createElement("div");
         for (let i = 0; i < e; i++) {
@@ -13,12 +16,16 @@ function resize(e) {
         colFragment.appendChild(div);
         document.querySelector("div").appendChild(colFragment);
     }
+    constantHover();
 }
 
-const divs = document.querySelectorAll(".row");
 const buttons = document.querySelector("button");
 
-divs.forEach(div => div.addEventListener("mouseover", hoverColor));
+function constantHover() {
+    let divs = document.querySelectorAll(".row");
+    divs.forEach(div => div.addEventListener("mouseover", hoverColor));
+}
+
 buttons.addEventListener("click", changeSize);
 
 
