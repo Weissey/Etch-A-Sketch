@@ -1,5 +1,6 @@
 body {
     background-color: beige;
+    margin: 4px 10px;
 }
 
 /*Main grid*/
@@ -29,4 +30,21 @@ body {
 
 .col {
     flex-direction: column;
+}
+
+/*Size button styles*/
+.size-button {
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 8px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(217, 237, 241);
+    border: 2px solid black;
+    transition: box-shadow 0.25s linear;
+}
+
+.size-button:hover {
+    box-shadow: inset 0 0 0 1.5px #3a3a3a;
 }
