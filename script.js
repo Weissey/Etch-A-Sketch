@@ -16,17 +16,16 @@ function resize(e) {
 }
 
 const divs = document.querySelectorAll(".row");
+const buttons = document.querySelector("button");
 
 divs.forEach(div => div.addEventListener("mouseover", hoverColor));
+buttons.addEventListener("click", changeSize);
+
 
 function hoverColor(e) {
     e.stopPropagation();
     this.classList.add("hover");
 }
-
-const buttons = document.querySelector("button");
-
-buttons.addEventListener("click", changeSize);
 
 function changeSize() {
     let answer = prompt("How many squares per side?");
