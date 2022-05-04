@@ -24,15 +24,6 @@ function resize(e) {
 
 activateNormalColor();
 
-/*function playGame() {
-    let divs = document.querySelectorAll(".row");
-    if (buttonSelection === 1) {
-        divs.forEach(div => div.addEventListener("mouseover", activateNormalColor));
-    } else if (buttonSelection === 2) {
-        divs.forEach(div => div.addEventListener("mouseover", activateRainbowColor));
-    }
-}*/
-
 function activateNormalColor() {
     const divs = document.querySelectorAll(".row");
     divs.forEach(div => div.addEventListener("mouseover", function () {
@@ -83,9 +74,3 @@ function checkButtonChoice() {
         return;
     }
 }
-
-/*function activateRainbowColor(e) {
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    const divSelection = document.querySelector(".row");
-    divSelection.setAttribute("style", `background-color: ${randomColor}`);
-}*/
