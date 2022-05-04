@@ -19,29 +19,52 @@ function resize(e) {
     constantHover();
 }
 
-const buttons = document.querySelector("button");
-
 function constantHover() {
     let divs = document.querySelectorAll(".row");
     divs.forEach(div => div.addEventListener("mouseover", hoverColor));
 }
 
-buttons.addEventListener("click", changeSize);
+//buttons.addEventListener("click", changeSize);
 
 
 function hoverColor(e) {
     e.stopPropagation();
-    this.classList.add("hover");
+    this.classList.add("hover-normal");
 }
 
 function changeSize() {
-    let answer = prompt("How many squares per side?");
-    if (isNaN(answer) !== true) {
+    let answer = document.querySelector(".axis-number").value;
+    console.log(answer);
+    if (answer == 0 || answer === "") {
+        resize(16);
+        return;
+    }   else if ((isNaN(answer) !== true) && answer <= 100) {
         resize(answer);
         return;
-    } else if (isNaN(answer)) {
-        alert("The result you entered was not a number.");
+    } else if ((isNaN(answer) !== true) && answer > 100) {
+        alert("The number you have entered is above the limit (100).");
         resize(16);
         return;
     }
 }
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => button.addEventListener("click", buttonChoice));
+
+function buttonChoice() {
+    console.log(this.classList.value)
+    if (this.classList.value == "normal-button") {
+        activateNormalColor();
+        return;
+    } else if (this.classList.value === "rainbow-button") {
+        activateRainbowColor();
+        return;
+    } else if (this.classList.value === "darken-button") {
+        activateDarkenColor();
+    }
+}
+
+const input = document.querySelector("input");
+
+input.addEventListener("keyup", changeSize);
