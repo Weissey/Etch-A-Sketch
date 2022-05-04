@@ -1,4 +1,8 @@
 let colFragment = new DocumentFragment();
+const buttons = document.querySelectorAll("button");
+const input = document.querySelector("input");
+
+buttons.forEach(button => button.addEventListener("click", checkButtonChoice))
 
 resize(16);
 
@@ -16,20 +20,36 @@ function resize(e) {
         colFragment.appendChild(div);
         document.querySelector("div").appendChild(colFragment);
     }
-    constantHover();
 }
 
-function constantHover() {
+activateNormalColor();
+
+/*function playGame() {
     let divs = document.querySelectorAll(".row");
-    divs.forEach(div => div.addEventListener("mouseover", hoverColor));
+    if (buttonSelection === 1) {
+        divs.forEach(div => div.addEventListener("mouseover", activateNormalColor));
+    } else if (buttonSelection === 2) {
+        divs.forEach(div => div.addEventListener("mouseover", activateRainbowColor));
+    }
+}*/
+
+function activateNormalColor() {
+    const divs = document.querySelectorAll(".row");
+    divs.forEach(div => div.addEventListener("mouseover", function () {
+        this.style.backgroundColor = "black";
+    }));
+    return;
 }
 
-//buttons.addEventListener("click", changeSize);
+function activateRainbowColor() {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    const divs = document.querySelectorAll(".row");
+    divs.forEach(div => div.addEventListener("mouseover", function () {
+        this.style.backgroundColor = `#${randomColor}`;
+        randomColor = Math.floor(Math.random()*16777215).toString(16);
+    }));
 
-
-function hoverColor(e) {
-    e.stopPropagation();
-    this.classList.add("hover-normal");
+    return;
 }
 
 function changeSize() {
@@ -48,11 +68,9 @@ function changeSize() {
     }
 }
 
-const buttons = document.querySelectorAll("button");
+input.addEventListener("keyup", changeSize);
 
-buttons.forEach(button => button.addEventListener("click", buttonChoice));
-
-function buttonChoice() {
+function checkButtonChoice() {
     console.log(this.classList.value)
     if (this.classList.value == "normal-button") {
         activateNormalColor();
@@ -62,9 +80,12 @@ function buttonChoice() {
         return;
     } else if (this.classList.value === "darken-button") {
         activateDarkenColor();
+        return;
     }
 }
 
-const input = document.querySelector("input");
-
-input.addEventListener("keyup", changeSize);
+/*function activateRainbowColor(e) {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    const divSelection = document.querySelector(".row");
+    divSelection.setAttribute("style", `background-color: ${randomColor}`);
+}*/

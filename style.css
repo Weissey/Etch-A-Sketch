@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(155, 132, 163);
     margin: 4px 10px;
 }
 
@@ -10,8 +10,8 @@ body {
     flex: 1;
     height: 600px;
     width: 600px;
-    background-color: white;
-    box-shadow: 0 3px 10px white;
+    background-color: rgb(236, 236, 236);
+    box-shadow: 0 3px 6px rgb(0, 0, 0);
 }
 
 .col, .row {
@@ -20,10 +20,6 @@ body {
     width: auto;
     height: auto;
     flex: 1 0 auto;
-}
-
-.hover-normal {
-    background-color: black;
 }
 
 .col {
@@ -38,11 +34,11 @@ input, button {
     font-size: 0.875rem;
     border-radius: 8px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(62, 62, 62);
+    background-color: rgb(221, 221, 221);
     backdrop-filter: blur(16px);
-    border: 2px solid white;
+    border: 2px solid rgb(0, 0, 0);
     transition: box-shadow 0.25s linear;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 input {
@@ -54,5 +50,5 @@ button {
 }
 
 button:hover {
-    box-shadow: inset 0 0 0 1.5px white;
+    box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
 }
