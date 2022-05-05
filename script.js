@@ -39,31 +39,15 @@ function activateNormalColor() {
 }
 
 function activateRainbowColor() {
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     const divs = document.querySelectorAll(".row");
     divs.forEach(div => div.addEventListener("mouseover", function () {
         this.style.backgroundColor = `#${randomColor}`;
-        randomColor = Math.floor(Math.random()*16777215).toString(16);
+        console.log(this.style.backgroundColor + "RAINBOW");
+        randomColor = Math.floor(Math.random() * 16777215).toString(16);
     }));
     return;
 }
-
-
-//CODE BELOW DOES NOT WORK
-/*function activateDarkenColor() {
-    const divs = document.querySelectorAll(".row");
-    divs.forEach(div => div.addEventListener("mouseover", function () {
-        console.log(this.style.backgroundColor);
-        let rgb = this.style.backgroundColor;
-        for(let i = 0; i < 3; i++) {
-            let darkenDivision = rgb[i] / 10;
-            rgb[i] = rgb[i] - darkenDivision;
-        }
-        this.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-        console.log(rgb);
-    }))
-}
-*/
 
 //Function to determine if input for setGrid is correct
 function changeSize() {
@@ -94,7 +78,6 @@ function checkButtonChoice() {
         filter: brightness(70%);
         `;
         document.querySelector(".rainbow-button").removeAttribute("style", "filter");
-        document.querySelector(".darken-button").removeAttribute("style", "filter");
         activateNormalColor();
         return;
     } else if (this.classList.value === "rainbow-button") {
@@ -103,18 +86,7 @@ function checkButtonChoice() {
         filter: brightness(70%);
         `;
         document.querySelector(".normal-button").removeAttribute("style", "filter");
-        document.querySelector(".darken-button").removeAttribute("style", "filter");
         activateRainbowColor();
         return;
-    } else if (this.classList.value === "darken-button") {
-        console.log(this);
-        this.style.cssText = `
-        transition: all 0.2s ease-in;
-        filter: brightness(70%);
-        `;
-        document.querySelector(".normal-button").removeAttribute("style", "filter");
-        document.querySelector(".rainbow-button").removeAttribute("style", "filter");
-        activateDarkenColor();
-        return;
-    }
+    } 
 }
