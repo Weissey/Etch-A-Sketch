@@ -4,9 +4,10 @@ const input = document.querySelector("input");
 
 buttons.forEach(button => button.addEventListener("click", checkButtonChoice))
 
-resize(16);
+setGrid(16);
 
-function resize(e) {
+//Function to reset and create new grids
+function setGrid(e) {
     let toBeDeleted = document.querySelectorAll(".column");
     toBeDeleted.forEach(div => div.remove());
     for (let i = 0; i < e; i++) {
@@ -32,9 +33,8 @@ function activateNormalColor() {
         filter: brightness(70%);
         `;
     divs.forEach(div => div.addEventListener("mouseover", function () {
-        this.style.backgroundColor = "black";
+        this.style.backgroundColor = "rgb(200, 200, 200)";
     }));
-
     return;
 }
 
@@ -45,7 +45,6 @@ function activateRainbowColor() {
         this.style.backgroundColor = `#${randomColor}`;
         randomColor = Math.floor(Math.random()*16777215).toString(16);
     }));
-
     return;
 }
 
@@ -53,25 +52,48 @@ function activateDarkenColor() {
     const divs = document.querySelectorAll(".row");
     divs.forEach(div => div.addEventListener("mouseover", function () {
         console.log(this.style.backgroundColor);
+        let rgb = this.style.backgroundColor;
+        for(let i = 0; i < 3; i++) {
+            let darkenDivision = rgb[i] / 10;
+            rgb[i] = rgb[i] - darkenDivision;
+        }
+        this.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+        console.log(rgb);
     }))
 }
 
 
 
 
+/*const divs = document.querySelectorAll(".row");
+divs.forEach(div => div.addEventListener("mouseover", function () {
+    let rgb = this.style.backgroundColor.match(/\d+/g);
+    console.log(rgb);
+    for(let i = 0; i < 3; i++) {
+        let darkenDivision = rgb[i] / 10;
+        rgb[i] = rgb[i] - darkenDivision;
+    }
+    this.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+    console.log(this.style.backgroundColor);
+}))
+    return;
+}*/
 
+
+
+//Function to determine if input for setGrid is correct
 function changeSize() {
     let answer = document.querySelector(".axis-number").value;
     console.log(answer);
     if (answer == 0 || answer === "") {
-        resize(16);
+        setGrid(16);
         return;
     }   else if ((isNaN(answer) !== true) && answer <= 100) {
-        resize(answer);
+        setGrid(answer);
         return;
     } else if ((isNaN(answer) !== true) && answer > 100) {
         alert("The number you have entered is above the limit (100).");
-        resize(16);
+        setGrid(16);
         return;
     }
 }
