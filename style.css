@@ -14,7 +14,7 @@ body {
     box-shadow: 0 3px 6px rgb(0, 0, 0);
 }
 
-.col, .row {
+.column, .row {
     display: flex;
     flex-basis: 0;
     width: auto;
@@ -22,7 +22,7 @@ body {
     flex: 1 0 auto;
 }
 
-.col {
+.column {
     flex-direction: column;
 }
 
