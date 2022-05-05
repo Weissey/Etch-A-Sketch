@@ -48,7 +48,9 @@ function activateRainbowColor() {
     return;
 }
 
-function activateDarkenColor() {
+
+//CODE BELOW DOES NOT WORK
+/*function activateDarkenColor() {
     const divs = document.querySelectorAll(".row");
     divs.forEach(div => div.addEventListener("mouseover", function () {
         console.log(this.style.backgroundColor);
@@ -61,25 +63,7 @@ function activateDarkenColor() {
         console.log(rgb);
     }))
 }
-
-
-
-
-/*const divs = document.querySelectorAll(".row");
-divs.forEach(div => div.addEventListener("mouseover", function () {
-    let rgb = this.style.backgroundColor.match(/\d+/g);
-    console.log(rgb);
-    for(let i = 0; i < 3; i++) {
-        let darkenDivision = rgb[i] / 10;
-        rgb[i] = rgb[i] - darkenDivision;
-    }
-    this.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-    console.log(this.style.backgroundColor);
-}))
-    return;
-}*/
-
-
+*/
 
 //Function to determine if input for setGrid is correct
 function changeSize() {
