@@ -6,12 +6,21 @@
         <meta charset = "UTF-8">
         <script src = "script.js" defer></script>
         <link rel = "stylesheet" href = "style.css">
+        <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
     </head>
 
     <body>
-        <input type="text" class = "axis-number" placeholder="# of boxes per axis (Max: 100)">
-        <button class = "normal-button">Normal mode!</button>
-        <button class = "rainbow-button">Rainbow mode!</button>
-        <div class = "flex-grid"></div>
+        <div class = "title">Etch A Sketch</div>
+        <div class = "container">
+            <div class = "left-container">
+                <input type = "color" class = "color-square">
+                <input type = "text" class = "axis-number" placeholder="# of boxes per axis (Max: 100)">
+                <button class = "normal-button">Normal mode!</button>
+                <button class = "rainbow-button">Rainbow mode!</button>
+                <button class = "eraser">Clear</button>
+            </div>
+            <div class = "flex-grid"></div>
+        </div>
+        <div class = "footer">PLACEHOLDER</div>
     </body>
 </html>
