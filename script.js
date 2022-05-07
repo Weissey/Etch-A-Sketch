@@ -55,6 +55,7 @@ function setCurrentSize(newSizeValue) {
 }
 
 function setCurrentMode(newMode) {
+    updateButtonDisplay(newMode);
     currentMode = newMode;
 }
 
@@ -95,9 +96,17 @@ function generateHex() {
     return hex;
 }
 
-
+function updateButtonDisplay(newMode) {
+    if (newMode === "color") {
+        rainbowButton.classList.remove("active");
+        normalButton.classList.add("active");
+    } else if (newMode === "rainbow") {
+        normalButton.classList.remove("active");
+        rainbowButton.classList.add("active");
+    }
+}
 
 window.onload = () => {
     constructGrid(DEFAULT_GRID_SIZE);
-    //activateButton(DEFAULT_MODE)
-  }
+    updateButtonDisplay(DEFAULT_MODE);
+}
