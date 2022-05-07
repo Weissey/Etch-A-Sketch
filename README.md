@@ -4,3 +4,6 @@ The code has been completely rewritten at least [1] time(s).
 
 V2 siginifically increases readability and functionality by fully utilizing variables and constants, therefore reducing code bloat and confusion.
 
+There exists a more efficient way of constructing grids rather than creating the x-axis first then filling them with downdrop containers.
+- Element.style.gridTemplateColumns
+
