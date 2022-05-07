@@ -14,12 +14,13 @@
         <div id = "container">
             <div id = "leftContainer">
                 <input type = "color" id = "colorSquare">
-                <input type = "slider" id = "sizeSlider">
+                <div id = "displaySize">16 X 16</div>
+                <input type = "range" id = "sizeSlider" value = "16" min = "1" max = "100">
                 <button id = "normalButton">Normal mode!</button>
                 <button id = "rainbowButton">Rainbow mode!</button>
                 <button id = "clearButton">Clear</button>
             </div>
-            <div id = "sketchGrid"></div>
+            <div id = "sketchGrid" class = "sketchGrid"></div>
         </div>
         <div id = "footer">PLACEHOLDER</div>
     </body>
