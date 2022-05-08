@@ -4,6 +4,7 @@
     <head>
         <title>Etch-A-Sketch</title>
         <meta charset = "UTF-8">
+        <script src="https://kit.fontawesome.com/d044f8f5da.js" crossorigin="anonymous"></script>
         <script src = "script.js" defer></script>
         <link rel = "stylesheet" href = "style.css">
         <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
@@ -22,6 +23,16 @@
             </div>
             <div id = "sketchGrid" class = "sketchGrid"></div>
         </div>
-        <div id = "footer">PLACEHOLDER</div>
+        <div id = "footer">
+            <span>
+                Built by Weissey
+            </span>
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+            <a href="https://github.com/Weissey" target = "_blank" id = "gitIcon">
+                <i class="fa-brands fa-github-square"></i>
+            </a>
+        </div>
     </body>
 </html>

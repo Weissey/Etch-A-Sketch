@@ -275,5 +275,19 @@ button.active {
 
 /* Footer */
 #footer {
+    font-size: 20px;
+}
+
+/* Github Logo */
+.fa-github-square {
+    color: var(--grid-background-color);
+    transition: transform 0.3s ease-in-out;
     font-size: 26px;
+}
+
+.fa-github-square:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 0.2s ease-in-out;
+    color: #3c1969;
 }
