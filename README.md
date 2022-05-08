@@ -7,3 +7,7 @@ V2 siginifically increases readability and functionality by fully utilizing vari
 There exists a more efficient way of constructing grids rather than creating the x-axis first then filling them with downdrop containers.
 - Element.style.gridTemplateColumns
 
+Shoutout to https://github.com/michalosman, majority of my code was inspired from his as I learned more efficient methods at managing variables and functions.
+- Reading Michal's code really opened my eyes to what my code **should've** been, but instead I'm not at that level yet.
+
+From here on out, I will approach creating code from a more minimal and efficient way, inspired by Michal.
