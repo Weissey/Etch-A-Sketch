@@ -1,4 +1,4 @@
-Live preview 👉 ➡️ 
+👉 [Live preview](https://weissey.github.io/Etch-A-Sketch/)
 
 This project surpassed my expectations of how difficult it would be immediately following the construction of V1 functions responsible for setting up the grid and how every element was going to be interacting with each other.
 
